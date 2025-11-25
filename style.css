@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Syriac+Western:wght@100..900&display=swap');
+:root{
+    --Blue-50 :  hsl(240, 78%, 98%);
+    --Gray-650:  hsl(233, 13%, 49%);
+    --Gray-700:  hsl(232, 13%, 33%);
+    --Linear-gradient: linear-gradient(to right, hsl(237, 73%, 79%), hsl(238, 63%, 64%));
+
+}
+
+@media (max-width: 375px){}
+@media (max-width:1440px){}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: 0;
+    
+}
+.bg-image .bg-bottom{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 35%;
+}
+
+.bg-image .bg-top{
+    position: fixed;
+    right: 0;
+    height: 80%;
+}
+
+.toggle span{
+    color:var(--Gray-650);
+}
+body{
+    
+    font-family:'Montserrat', "sans-serif";
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.pricing-title h1{
+    margin-top: 170px;
+    font-family: Montserrat, "sans-serif";
+    color:var(--Gray-700);
+}
+
+.main-content .toggle{
+    margin-top:30px;
+}
+
+.main-content .toggle p{
+    color:var(--Gray-700);
+    margin: 0 10px;
+}
+
+.box-cards{
+    margin-bottom: 110px;
+    justify-content: center; 
+    width: 900px;
+    height: 500px;
+    margin-top: 50px;
+}
+
+.cards{
+    display: flex;
+}
+
+/*-------------------------------------*/
+/*-------------LEFT CARD---------------*/
+/*-------------------------------------*/
+/*-------------------------------------*/
+
+.card-basic-left hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--Gray-650);
+    width: 250px;
+}
+.box-cards .card-basic-left{
+
+border-radius: 12px;
+background-color:var(--Blue-50);
+width: 300px;
+height: 390px;
+border: 1px solid #d0d0ff;
+box-shadow: 
+  0 8px 20px rgba(0,0,0,0.15),
+  0 3px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.card-basic-left .plan-time p{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.card-basic-left .price-section h1{
+margin-bottom:30px;
+font-size: 60px;
+color: var(--Gray-700);
+}
+/*---------------------------------------*/
+/*-------------MIDDLE CARD---------------*/
+/*---------------------------------------*/
+/*---------------------------------------*/
+
+.card-professional-middle hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--Gray-650);
+    width: 300px;
+}
+.box-cards .card-professional-middle{
+
+background:var(--Linear-gradient);
+color: var(--Blue-50);
+width: 350px;
+height: 430px;
+border-radius: 10px;
+box-shadow: 
+  0 8px 20px rgba(0,0,0,0.15),
+  0 3px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+
+}
+
+.card-professional-middle .plan-time p{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.card-professional-middle .price-section h1{
+    margin-bottom:30px;
+    font-size: 60px;
+    color: var(--Blue-50);
+}
+
+
+/*--------------------------------------*/
+/*-------------RIGHT CARD---------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
+.card-master-right hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--Gray-650);
+    width: 250px;
+}
+
+.box-cards .card-master-right{
+    
+background-color:var(--Blue-50);
+width: 300px;
+height: 390px;
+border-radius: 10px;
+
+box-shadow: 
+  10px 0 20px  rgba(0,0,0,0.15),
+  0 3px 8px rgba(0,0,0,0.1);
+
+  padding: 20px;
+
+}
+.card-master-right .plan-time p{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.card-master-right .price-section h1{
+    margin-bottom:30px;
+    font-size: 60px;
+    color: var(--Gray-700);
+}
+
+.btn-learn-more{
+    margin:10px auto;
+    padding: 20px 20px 20px;
+    height: 40px;
+    width: 260px;
+    text-transform: uppercase;
+    background:var(--Linear-gradient);
+    cursor:pointer;
+    /* border:none;  */
+    border:2px solid;
+    border-radius: 5px;
+    padding: 15px 15px;
+    color:var(--Blue-50);
+    font-weight: 780;
+}
+
+.btn-learn-more:hover{
+    
+        background:var(--Blue-50);
+        color:var(--Gray-650);
+        border:2px solid var(--Gray-650);
+}
+.card-professional-middle .btn-learn-more{
+    
+    color: var(--Gray-650);
+    background: var(--Blue-50);
+
+}
+.card-professional-middle .btn-learn-more:hover{
+    background:var(--Linear-gradient);
+    border: 2px solid var(--Blue-50);
+    color:var(--Blue-50);
+}
+.attribution {font-family: monospace;font-size: 21px; text-align: center; position:fixed; left:0; right:0;}
+.attribution a {color: hsl(228, 45%, 44%); text-decoration: none;}
