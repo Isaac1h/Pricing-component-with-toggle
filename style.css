@@ -1,213 +1,206 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Syriac+Western:wght@100..900&display=swap');
-:root{
-    --Blue-50 :  hsl(240, 78%, 98%);
-    --Gray-650:  hsl(233, 13%, 49%);
-    --Gray-700:  hsl(232, 13%, 33%);
-    --Linear-gradient: linear-gradient(to right, hsl(237, 73%, 79%), hsl(238, 63%, 64%));
-
+:root {
+  --Blue-50: hsl(240, 78%, 98%);
+  --Gray-650: hsl(233, 13%, 49%);
+  --Gray-700: hsl(232, 13%, 33%);
+  --Gradient: linear-gradient(to right, hsl(237, 73%, 79%), hsl(238, 63%, 64%));
 }
 
-@media (max-width: 375px){}
-@media (max-width:1440px){}
+* {margin: 0; padding: 0; box-sizing: border-box;}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing: 0;
-    
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex; justify-content: center;
+  text-align: center;
+  background-color: var(--Blue-50);
+  min-height: 100vh;
 }
+
 .bg-image .bg-bottom{
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 35%;
+    height: 30%;
 }
 
 .bg-image .bg-top{
     position: fixed;
     right: 0;
-    height: 80%;
+    height: 60%;
 }
 
-.toggle span{
-    color:var(--Gray-650);
-}
-body{
-    
-    font-family:'Montserrat', "sans-serif";
-    font-size: 15px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.pricing-title {
+  margin: 90px 0 30px;
+  font-size: 2.1rem;
+  color: var(--Gray-700);
 }
 
-.pricing-title h1{
-    margin-top: 170px;
-    font-family: Montserrat, "sans-serif";
+.toggle {
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  background: var(--Gradient);
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggle input:checked + .slider::before {
+  transform: translateX(26px); 
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;  
+  justify-content: center; 
+  gap: 20px;            
+  margin-bottom: 30px;   
+}
+
+.toggle-container span {
     color:var(--Gray-700);
+    font-size: 16px;
 }
 
-.main-content .toggle{
-    margin-top:30px;
+.box-cards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 50px 0;
 }
 
-.main-content .toggle p{
-    color:var(--Gray-700);
-    margin: 0 10px;
-}
-
-.box-cards{
-    margin-bottom: 110px;
-    justify-content: center; 
-    width: 900px;
-    height: 500px;
-    margin-top: 50px;
-}
-
-.cards{
-    display: flex;
-}
-
-/*-------------------------------------*/
-/*-------------LEFT CARD---------------*/
-/*-------------------------------------*/
-/*-------------------------------------*/
-
-.card-basic-left hr {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    color: var(--Gray-650);
-    width: 250px;
-}
-.box-cards .card-basic-left{
-
-border-radius: 12px;
-background-color:var(--Blue-50);
-width: 300px;
-height: 390px;
-border: 1px solid #d0d0ff;
-box-shadow: 
-  0 8px 20px rgba(0,0,0,0.15),
-  0 3px 8px rgba(0,0,0,0.1);
+.card {
   padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  height: 420px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15), 0 3px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card-basic-left .plan-time p{
-    margin-top: 25px;
-    margin-bottom: 25px;
+.card .plan-time {
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.card-basic-left .price-section h1{
-margin-bottom:30px;
-font-size: 60px;
-color: var(--Gray-700);
-}
-/*---------------------------------------*/
-/*-------------MIDDLE CARD---------------*/
-/*---------------------------------------*/
-/*---------------------------------------*/
-
-.card-professional-middle hr {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    color: var(--Gray-650);
-    width: 300px;
-}
-.box-cards .card-professional-middle{
-
-background:var(--Linear-gradient);
-color: var(--Blue-50);
-width: 350px;
-height: 430px;
-border-radius: 10px;
-box-shadow: 
-  0 8px 20px rgba(0,0,0,0.15),
-  0 3px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-
+.card .price-section h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
 }
 
-.card-professional-middle .plan-time p{
-    margin-top: 25px;
-    margin-bottom: 25px;
+.card hr {
+  border: 1px solid var(--Gray-650);
+  margin: 10px 0;
 }
 
-.card-professional-middle .price-section h1{
-    margin-bottom:30px;
-    font-size: 60px;
-    color: var(--Blue-50);
+.features p {
+  font-weight: 700;
+  margin: 10px 0 0;
 }
 
-
-/*--------------------------------------*/
-/*-------------RIGHT CARD---------------*/
-/*--------------------------------------*/
-/*--------------------------------------*/
-.card-master-right hr {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    color: var(--Gray-650);
-    width: 250px;
+.card-basic {
+  background-color: var(--Blue-50);
+  color: var(--Gray-700);
 }
 
-.box-cards .card-master-right{
-    
-background-color:var(--Blue-50);
-width: 300px;
-height: 390px;
-border-radius: 10px;
-
-box-shadow: 
-  10px 0 20px  rgba(0,0,0,0.15),
-  0 3px 8px rgba(0,0,0,0.1);
-
-  padding: 20px;
-
-}
-.card-master-right .plan-time p{
-    margin-top: 25px;
-    margin-bottom: 25px;
+.card-professional {
+  background: var(--Gradient);
+  color: #fff;
+  width: 350px;
 }
 
-.card-master-right .price-section h1{
-    margin-bottom:30px;
-    font-size: 60px;
-    color: var(--Gray-700);
+.card-master {
+  background-color: var(--Blue-50);
+  color: var(--Gray-700);
 }
 
-.btn-learn-more{
-    margin:10px auto;
-    padding: 20px 20px 20px;
-    height: 40px;
-    width: 260px;
-    text-transform: uppercase;
-    background:var(--Linear-gradient);
-    cursor:pointer;
-    /* border:none;  */
-    border:2px solid;
-    border-radius: 5px;
-    padding: 15px 15px;
-    color:var(--Blue-50);
-    font-weight: 780;
+.btn-learn-more {
+  margin-top: auto;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 700;
 }
 
-.btn-learn-more:hover{
-    
-        background:var(--Blue-50);
-        color:var(--Gray-650);
-        border:2px solid var(--Gray-650);
+.card-basic .btn-learn-more,
+.card-master .btn-learn-more {
+  background: var(--Gradient);
+  color: var(--Blue-50);
 }
-.card-professional-middle .btn-learn-more{
-    
-    color: var(--Gray-650);
-    background: var(--Blue-50);
 
+.card-basic .btn-learn-more:hover,
+.card-master .btn-learn-more:hover {
+  border: 2px solid blue;
+  background: var(--Blue-50);
+  color: var(--Gray-650);
 }
-.card-professional-middle .btn-learn-more:hover{
-    background:var(--Linear-gradient);
-    border: 2px solid var(--Blue-50);
-    color:var(--Blue-50);
+
+.card-professional .btn-learn-more {
+  background: var(--Blue-50);
+  color: var(--Gray-650);
 }
-.attribution {font-family: monospace;font-size: 21px; text-align: center; position:fixed; left:0; right:0;}
-.attribution a {color: hsl(228, 45%, 44%); text-decoration: none;}
+
+.card-professional .btn-learn-more:hover {
+  border: 2px solid #fff;
+  background: var(--Gradient);
+  color: #fff;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 20px;
+  left: 0; right: 0;
+  font-family: monospace;
+  font-size: 18px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .box-cards {flex-direction: column; align-items: center;gap: 30px;}
+  .attribution {position: static; margin: 10px 0 10px;}
+  .bg-top, .bg-bottom{display: none;}
+}
+
+@media (max-width: 1440px) {
+  .card {width: 280px; height: 400px;}
+  .toggle {width: 50px; height: 28px;}
+  .slider::before {width: 22px; height: 22px; transform: translateX(22px);}
+  .card .price-section h1 {font-size: 50px;}
+  .pricing-title {font-size: 2rem;}
+  .bg-bottom{display:none;}
+  .bg-top{display: none;}
+}
