@@ -104,6 +104,13 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+.card hr {
+  border: 1px solid var(--Gray-650);
+  margin: 1rem 0;
+}
+ .card.card-professional hr.white-border-middle {
+  border: 1px solid white;
+}
 
 .card .plan-time {
   font-weight: 700;
@@ -115,10 +122,6 @@ body {
   margin-bottom: 20px;
 }
 
-.card hr {
-  border: 1px solid var(--Gray-650);
-  margin: 10px 0;
-}
 
 .features p {
   font-weight: 700;
@@ -196,11 +199,14 @@ body {
 }
 
 @media (max-width: 1440px) {
+  .toggle input:checked + .slider::before {transform: translateX(20.2px)};
   .card {width: 280px; height: 400px;}
   .toggle {width: 50px; height: 28px;}
-  .slider::before {width: 22px; height: 22px; transform: translateX(22px);}
+  .slider::before {width: 22px; height: 22px;}
   .card .price-section h1 {font-size: 50px;}
   .pricing-title {font-size: 2rem;}
   .bg-bottom{display:none;}
   .bg-top{display: none;}
+
+
 }
